@@ -1,0 +1,31 @@
+.ToDoSearch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 50vw;
+    margin: 20px auto;
+    padding: 0 6px;
+}
+
+.ToDoSearch input {
+    padding: 4px;
+    border: none;
+    border-radius: 10px;
+    width: 90%;
+}
+
+.ToDoSearch input:focus {
+    outline: none;
+}
+
+.ToDoSearch span {
+    max-width: 12px;
+    /* width: 1.5%; */
+    /* border: 1px solid black; */
+}
+
+span img {
+    width: 100%;
+}

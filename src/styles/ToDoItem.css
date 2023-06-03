@@ -1,0 +1,32 @@
+.ToDoItem {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    margin: 8px auto;
+    padding: 4px;
+    width: 50vw;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    /* background-color: rgb(207, 207, 207); */
+}
+
+.ToDoItem p{
+    width: 80%;
+}
+
+/* There are 2 spans. So both take 20% */
+.ToDoItem span {
+    width: 10%;
+    text-align: center;
+}
+
+.ToDoItem .DeleteToDoButton {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    /* position: absolute; */
+}
