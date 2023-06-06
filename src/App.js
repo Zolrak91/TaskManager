@@ -1,47 +1,91 @@
+// CAMBIAR EL TASKCOUNTER CUANDO NO HAY TAREAS POR HACER, QUE NO "DIGA 0 DE 0"
+
 import React from 'react';
 import Title from './components/Title';
-import ToDoCounter from './components/ToDoCounter';
-import ToDoSearch from './components/ToDoSearch';
-import ToDoList from './containers/ToDoList';
-import ToDoItem from './components/ToDoItem';
-import CreateToDoButton from './components/CreateToDoButton';
+import TaskCounter from './components/TaskCounter';
+import TaskSearch from './components/TaskSearch';
+import NoTaskMessage from './components/NoTasksMessage';
+import TaskList from './containers/TaskList';
+import TaskItem from './components/TaskItem';
+import CreateTaskButton from './components/CreateTaskButton';
 
-// CREAR ESTILOS PARA CADA COMPONENTE
-
-const tasks = [
+const defaultTasks = [
   {text: 'Tarea1', completed: false},
   {text: 'Tarea2', completed: false},
   {text: 'Tarea3', completed: false},
   {text: 'Tarea4', completed: false},
+  {text: 'Emparejar', completed: false},
 ];
 
-const completedTasks = tasks.filter(task => (task.completed === true));
-
 function App() {
+  const [tasks, setTasks] = React.useState(defaultTasks);
+  const [searchValue, setSearchValue] = React.useState('');
+
+  const completedTasks = tasks.filter(task => task.completed).length;
+  const totalTasks = tasks.length;
+
+  const filteredTasks = tasks.filter(task => {
+    const taskText = task.text.toLowerCase(); //Using variables to shorten the return line
+    const searchText = searchValue.toLowerCase();
+    return taskText.includes(searchText);
+  });
+
+  const compleTask = (text) => {
+    const newTasks = [...tasks];
+    const taskIndex = newTasks.findIndex((task) => task.text === text);
+    
+    if(newTasks[taskIndex].completed === false) {
+      newTasks[taskIndex].completed = true;
+    } else {
+      newTasks[taskIndex].completed = false;
+    }
+
+    setTasks(newTasks);
+  };
+
+  const deleteTask = (text) => {
+    const newTasks = [...tasks];
+    const taskIndex = newTasks.findIndex((task) => task.text === text);
+    
+    newTasks.splice(taskIndex, 1);
+    setTasks(newTasks);
+  };
+
   return (
     <>
       <Title></Title>
 
       {/* Counts the completed task over total */}
-      <ToDoCounter completed={completedTasks.length} total={tasks.length} />
-      {console.log(tasks)}
-      {console.log(completedTasks)}
+      <TaskCounter 
+        completed={completedTasks} 
+        total={totalTasks} 
+      />
 
       {/* Used to search among task */}
-      <ToDoSearch />
+      <TaskSearch 
+        searchValue={searchValue} 
+        setSearchValue={setSearchValue}
+      />
 
       {/* List of tasks */}
-      <ToDoList>
-        {tasks.map(task => (
-          <ToDoItem 
-            key={task.text} 
-            text={task.text} 
-            completed={task.completed} />
-        ))}
-      </ToDoList>
-
+      {tasks.length === 0 ? 
+          <NoTaskMessage />
+        :
+          <TaskList>
+            {filteredTasks.map(task => (
+              <TaskItem 
+                key={task.text} 
+                text={task.text} 
+                completed={task.completed} 
+                onComplete={() => compleTask(task.text)}
+                onDelete={() => deleteTask(task.text)}
+              />
+            ))}
+          </TaskList>
+      }
+      
       {/* Button to create task */}
-      <CreateToDoButton />
+      <CreateTaskButton />
     </>
   );
 }

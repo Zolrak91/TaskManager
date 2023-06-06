@@ -1,4 +1,4 @@
-.ToDoSearch {
+.TaskSearch {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,18 +9,18 @@
     padding: 0 6px;
 }
 
-.ToDoSearch input {
+.TaskSearch input {
     padding: 4px;
     border: none;
     border-radius: 10px;
     width: 90%;
 }
 
-.ToDoSearch input:focus {
+.TaskSearch input:focus {
     outline: none;
 }
 
-.ToDoSearch span {
+.TaskSearch span {
     max-width: 12px;
     /* width: 1.5%; */
     /* border: 1px solid black; */
