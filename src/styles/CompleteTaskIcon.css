@@ -1,0 +1,20 @@
+.CompleteTaskIcon {
+    cursor: pointer;
+    text-align: center;
+    /* padding-bottom: 4px; */
+    width: 20px;
+    height: 20px;
+    /* line-height: 20px; */
+    vertical-align: middle;
+    /* color: white;
+    background-color: green;
+    border-radius: 5px;
+    border: 1px solid black;
+    position: absolute;
+    left: -10px;
+    top: 9px; */
+}
+
+.CompleteTaskIcon-checked {
+    color: green;
+}

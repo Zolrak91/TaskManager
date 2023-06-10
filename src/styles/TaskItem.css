@@ -12,16 +12,19 @@
     /* background-color: rgb(207, 207, 207); */
 }
 
-.TaskItem p{
+.TaskItem-p{
     width: 80%;
     /* padding-left: 4px; */
     margin-left: 10px;
 }
 
-.TaskItem .CompleteTaskButton {
+.TaskItem-p--checked {
+    text-decoration: line-through;
+}
+
+/* .TaskItem .CompleteTaskButton {
     cursor: pointer;
     text-align: center;
-    /* padding-bottom: 4px; */
     width: 20px;
     height: 20px;
     color: white;
@@ -31,9 +34,9 @@
     position: absolute;
     left: -10px;
     top: 9px;
-}
+} */
 
-.TaskItem .DeleteTaskButton {
+/* .TaskItem .DeleteTaskButton {
     cursor: pointer;
     text-align: center;
     width: 16px;
@@ -46,4 +49,4 @@
     position: absolute;
     top: -8px;
     right: -8px;
-}
+} */
