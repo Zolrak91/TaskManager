@@ -5,7 +5,7 @@
     margin: 8px auto;
     padding: 4px;
     width: 60vw;
-    height: 40px;
+    height: 50px;
     border: 1px solid black;
     border-radius: 5px;
     position: relative;
@@ -14,39 +14,9 @@
 
 .TaskItem-p{
     width: 80%;
-    /* padding-left: 4px; */
     margin-left: 10px;
 }
 
 .TaskItem-p--checked {
     text-decoration: line-through;
 }
-
-/* .TaskItem .CompleteTaskButton {
-    cursor: pointer;
-    text-align: center;
-    width: 20px;
-    height: 20px;
-    color: white;
-    background-color: green;
-    border-radius: 5px;
-    border: 1px solid black;
-    position: absolute;
-    left: -10px;
-    top: 9px;
-} */
-
-/* .TaskItem .DeleteTaskButton {
-    cursor: pointer;
-    text-align: center;
-    width: 16px;
-    height: 16px;
-    font-size: 10px;
-    color: white;
-    background-color: red;
-    border-radius: 5px;
-    border: 1px solid black;
-    position: absolute;
-    top: -8px;
-    right: -8px;
-} */

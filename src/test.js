@@ -1,0 +1,16 @@
+<>
+    <TodoCounter/>
+    <TodoSearch/>
+    <TodoList>
+        {loading&&(<><TodosLoading/><TodosLoading/><TodosLoading/></>)}
+        {error&&<TodosError/>}
+        {(!loading&&searchedTodos.length===0)&&<EmptyTodos/>}
+        {searchedTodos.map(todo=>(<TodoItem
+        key={todo.text}
+        text={todo.text}
+        completed={todo.completed}
+        onComplete={()=>completeTodo(todo.text)}
+        onDelete={()=>deleteTodo(todo.text)}/>))}
+    </TodoList>
+    <CreateTodoButton/>
+</>

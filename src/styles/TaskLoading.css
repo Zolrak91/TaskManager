@@ -1,0 +1,41 @@
+.TaskLoading {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    margin: 8px auto;
+    padding: 4px;
+    width: 60vw;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: relative;
+    /* background-color: rgb(207, 207, 207); */
+}
+
+.TaskLoading-p{
+    width: 80%;
+    margin-left: 10px;
+}
+
+/* ANIMATION --------------------------------------------------------------------- */
+
+@keyframes placeHolderShimmer {
+    0% {
+    background-position: -800px 0
+    }
+    100% {
+    background-position: 800px 0
+    }
+}
+
+.animated-background {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #bbbbbb 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    height: 50px;
+    position: relative;
+}

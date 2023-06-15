@@ -1,8 +1,8 @@
 import '../styles/NoTaskMessage.css';
 
-function NoTaskMessage() {
+function NoTaskMessage({text}) {
     return (
-        <p className="NoTaskMessage">No tienes tareas por hacer</p>
+        <p className="NoTaskMessage">{text}</p>
     );
 }
 

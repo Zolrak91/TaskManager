@@ -5,12 +5,7 @@ import '../styles/TaskItem.css';
 function TaskItem({ text, onComplete, onDelete, completed }) {
     return (
         <li className='TaskItem'>
-            {/* <span 
-                className='CompleteTaskButton'
-                onClick={onComplete}
-            >
-                ✓
-            </span> */}
+
             <CompleteTaskIcon 
                 className={`CompleteTaskIcon ${completed && "CompleteTaskIcon-checked"}`}
                 onClick={onComplete}
@@ -20,12 +15,6 @@ function TaskItem({ text, onComplete, onDelete, completed }) {
                 {text}
             </p>
 
-            {/* <span 
-                className='DeleteTaskButton'
-                onClick={onDelete}
-            >
-                X
-            </span> */}
             <DeleteTaskIcon 
                 className='DeleteTaskIcon'
                 onClick={onDelete}

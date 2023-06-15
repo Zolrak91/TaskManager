@@ -1,8 +1,14 @@
 import React from 'react';
+import { TaskContext } from '../context/TaskContext';
 import magnifier from '../assets/magnifier.png';
 import '../styles/TaskSearch.css';
 
-function TaskSearch({searchValue, setSearchValue}) {
+function TaskSearch() {
+    const {
+        searchValue,
+        setSearchValue,
+    } = React.useContext(TaskContext);
+
     return (
         <>
             <div className='TaskSearch'>
