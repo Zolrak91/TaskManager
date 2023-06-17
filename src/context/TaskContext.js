@@ -12,6 +12,9 @@ function TaskProvider({children}) {
         error
     } = useLocalStorage('TASKS_V1', []);
 
+    // Creates a State to manage the portal (closed by default)
+    const [openModal, setOpenModal] = React.useState(false);
+
     // Creates a State to store the value from the input in the searchbar
     const [searchValue, setSearchValue] = React.useState('');
 
@@ -50,9 +53,17 @@ function TaskProvider({children}) {
         saveTasks(newTasks);
     };
 
+    const addTask = (text) => {
+        const newTasks = [...tasks];
+        newTasks.push({
+            text,
+            completed: false,
+        });
+        saveTasks(newTasks)
+    };
+
     return (
         <TaskContext.Provider value={{
-            // tasks,
             totalTasks,
             loading,
             error,
@@ -62,6 +73,9 @@ function TaskProvider({children}) {
             filteredTasks,
             completeTask,
             deleteTask,
+            openModal,
+            setOpenModal,
+            addTask,
         }}>
             {children}
         </TaskContext.Provider>
